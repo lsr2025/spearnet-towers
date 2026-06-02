@@ -4,7 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Spearnet Towers | The Future Has Signal</title>
-<meta name="description" content="Spearnet Towers is a South African telecommunications infrastructure company developing and managing cellphone tower solutions — closing the digital divide across underserved and rural regions." />
+<meta name="description" content="Spearnet Towers is a South African telecommunications infrastructure company developing, deploying and managing cellphone tower solutions — closing the digital divide across underserved and rural regions." />
+
+<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
@@ -12,9 +15,11 @@
 <meta property="og:description" content="Connecting South Africa, one tower at a time. Telecommunications tower infrastructure for underserved and rural communities." />
 <meta property="og:url" content="https://www.spearnettowers.com" />
 <meta property="og:site_name" content="Spearnet Towers" />
+<meta property="og:image" content="https://www.spearnettowers.com/img/og.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Spearnet Towers | The Future Has Signal" />
 <meta name="twitter:description" content="Telecommunications tower infrastructure connecting underserved and rural South Africa." />
+<meta name="twitter:image" content="https://www.spearnettowers.com/img/og.jpg" />
 <meta name="theme-color" content="#8B1A10" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,6 +33,7 @@
   "@type": "Organization",
   "name": "Spearnet Towers (Pty) Ltd",
   "url": "https://www.spearnettowers.com",
+  "logo": "https://www.spearnettowers.com/img/logo-mark.png",
   "slogan": "The Future Has Signal",
   "description": "A South African telecommunications infrastructure company developing, deploying and managing cellphone tower solutions for underserved and rural regions.",
   "address": {
@@ -98,16 +104,16 @@
     font-size:.72rem;color:var(--red);margin-bottom:1.4rem;
   }
   .eyebrow::before{content:"";width:34px;height:2px;background:var(--red);display:inline-block}
-  .on-dark .eyebrow{color:var(--cream)}
-  .on-dark .eyebrow::before{background:var(--red-bright)}
+  .on-dark .eyebrow,.on-photo .eyebrow{color:var(--cream)}
+  .on-dark .eyebrow::before,.on-photo .eyebrow::before{background:var(--red-bright)}
 
   .h-section{
     font-family:var(--display);font-weight:400;text-transform:uppercase;
     font-size:clamp(2.5rem,6vw,4.6rem);line-height:.95;letter-spacing:-.015em;
     margin-bottom:1.6rem;
   }
-  .lead{font-size:clamp(1.25rem,2.2vw,1.55rem);font-style:italic;color:rgba(17,17,17,.72);max-width:60ch}
-  .on-dark .lead{color:rgba(252,246,239,.78)}
+  .lead{font-size:clamp(1.25rem,2.2vw,1.55rem);font-style:italic;color:rgba(17,17,17,.72);max-width:62ch}
+  .on-dark .lead,.on-photo .lead{color:rgba(252,246,239,.82)}
 
   /* ---------------- HEADER ---------------- */
   header{
@@ -137,6 +143,7 @@
   nav.links a.btn{color:var(--offwhite)}
   nav.links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--red);transition:width .3s ease}
   nav.links a:hover::after,nav.links a:focus-visible::after{width:100%}
+  nav.links a.btn::after{display:none}
 
   .btn{
     display:inline-flex;align-items:center;justify-content:center;gap:.55em;
@@ -162,43 +169,45 @@
   /* ---------------- HERO ---------------- */
   .hero{
     min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;
-    background:
-      radial-gradient(120% 80% at 80% 10%, rgba(158,36,23,.55) 0%, rgba(158,36,23,0) 55%),
-      linear-gradient(160deg,#1a0805 0%, #2a0a05 30%, #5e150c 70%, #8B1A10 130%);
     color:var(--offwhite);
   }
-  .hero .stars{position:absolute;inset:0;opacity:.6;
-    background-image:
-      radial-gradient(1.5px 1.5px at 20% 30%, #fff, transparent),
-      radial-gradient(1px 1px at 60% 20%, #ffd9c7, transparent),
-      radial-gradient(1.5px 1.5px at 80% 40%, #fff, transparent),
-      radial-gradient(1px 1px at 35% 60%, #fff, transparent),
-      radial-gradient(1px 1px at 90% 70%, #ffd9c7, transparent),
-      radial-gradient(1.2px 1.2px at 10% 80%, #fff, transparent),
-      radial-gradient(1px 1px at 50% 85%, #fff, transparent);
-    background-repeat:no-repeat;
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;animation:kenburns 26s ease-in-out infinite alternate}
+  @keyframes kenburns{from{transform:scale(1.06) translateY(0)}to{transform:scale(1.16) translateY(-2%)}}
+  .hero-bg::after{content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(120% 90% at 78% 12%, rgba(158,36,23,.42) 0%, rgba(158,36,23,0) 55%),
+      linear-gradient(160deg,rgba(15,6,4,.92) 0%, rgba(28,9,5,.72) 38%, rgba(94,21,12,.55) 75%, rgba(139,26,16,.55) 130%);
   }
-  /* horizon glow */
-  .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:34%;
-    background:linear-gradient(to top, rgba(247,150,90,.28), transparent);pointer-events:none}
-  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;width:100%;position:relative;z-index:2}
-  .hero-eyebrow{color:var(--cream);opacity:.9}
+  .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:30%;z-index:1;
+    background:linear-gradient(to top, rgba(247,150,90,.22), transparent);pointer-events:none}
+  .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:40px;align-items:center;width:100%;position:relative;z-index:3}
+  .hero-eyebrow{color:var(--cream);opacity:.92}
   .hero h1{
     font-family:var(--display);font-weight:400;text-transform:uppercase;
     font-size:clamp(3.4rem,11vw,8.4rem);line-height:.86;letter-spacing:-.02em;color:var(--offwhite);
-    margin:.1em 0 .15em;
+    margin:.1em 0 .15em;text-shadow:0 12px 40px rgba(0,0,0,.45);
   }
   .hero .tagline{
     font-family:var(--serif);font-style:italic;font-weight:500;
     font-size:clamp(1.5rem,4vw,2.6rem);color:var(--cream);
     border-left:3px solid var(--red-bright);padding-left:.7em;margin-bottom:1.4rem;display:inline-block;
   }
-  .hero .support{font-size:1.2rem;max-width:46ch;color:rgba(252,246,239,.82);margin-bottom:2.2rem}
+  .hero .support{font-size:1.2rem;max-width:46ch;color:rgba(252,246,239,.9);margin-bottom:2.2rem}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
 
-  /* tower artwork in hero */
-  .tower-art{position:relative;height:min(60vh,520px);display:flex;align-items:flex-end;justify-content:center}
-  .tower-art svg{height:100%;width:auto;filter:drop-shadow(0 30px 50px rgba(0,0,0,.5))}
+  /* 3D tower canvas */
+  .tower-art{position:relative;height:min(72vh,620px);display:flex;align-items:center;justify-content:center}
+  #towerCanvas{width:100%;height:100%;display:block;cursor:grab}
+  #towerCanvas:active{cursor:grabbing}
+  .tower-hint{position:absolute;bottom:6px;left:0;right:0;text-align:center;
+    font-family:var(--display-alt);font-weight:700;text-transform:uppercase;letter-spacing:.16em;
+    font-size:.6rem;color:rgba(252,246,239,.5)}
+  .scroll-cue{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:3;
+    font-family:var(--display-alt);font-weight:700;text-transform:uppercase;letter-spacing:.2em;font-size:.6rem;
+    color:rgba(252,246,239,.6);display:flex;flex-direction:column;align-items:center;gap:8px}
+  .scroll-cue .dot{width:5px;height:5px;border-radius:50%;background:var(--red-bright);box-shadow:0 0 12px var(--red-bright);animation:cue 1.8s ease-in-out infinite}
+  @keyframes cue{0%,100%{transform:translateY(0);opacity:1}50%{transform:translateY(8px);opacity:.4}}
 
   /* ---------------- generic section spacing ---------------- */
   .section-pad{padding:clamp(70px,11vw,140px) 0}
@@ -209,20 +218,14 @@
   .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px);align-items:center}
   .about-copy p+p{margin-top:1.1rem}
   .figure{
-    position:relative;border-radius:4px;overflow:hidden;min-height:420px;
-    background:linear-gradient(155deg,#2a0a05,#7a1810 60%,#b5402c);
-    display:flex;align-items:flex-end;justify-content:center;
+    position:relative;border-radius:6px;overflow:hidden;min-height:460px;
     box-shadow:0 40px 80px -40px rgba(139,26,16,.6);
   }
-  .figure .sky{position:absolute;inset:0;background:
-    radial-gradient(circle at 70% 22%, rgba(255,210,170,.35), transparent 45%),
-    radial-gradient(1px 1px at 25% 25%,#fff,transparent),
-    radial-gradient(1.4px 1.4px at 55% 18%,#fff,transparent),
-    radial-gradient(1px 1px at 80% 35%,#ffd9c7,transparent);background-repeat:no-repeat}
-  .figure svg{position:relative;height:78%;width:auto;z-index:2;filter:drop-shadow(0 20px 30px rgba(0,0,0,.45))}
+  .figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .figure .cap{position:absolute;bottom:0;left:0;right:0;padding:18px 22px;z-index:3;
-    background:linear-gradient(to top,rgba(0,0,0,.55),transparent);
+    background:linear-gradient(to top,rgba(0,0,0,.65),transparent);
     font-family:var(--display-alt);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.7rem;color:var(--cream)}
+  .figure.tall{min-height:560px}
 
   /* stat strip */
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hair-light);border-top:1px solid var(--hair-light);border-bottom:1px solid var(--hair-light)}
@@ -232,14 +235,14 @@
 
   /* VISION / MISSION */
   .vm-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px)}
-  .vm-card{border:1px solid var(--hair-light);padding:clamp(30px,4vw,52px);border-radius:4px;position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(252,246,239,.03),transparent)}
-  .vm-card .tag{font-family:var(--display);font-size:clamp(3rem,7vw,5rem);color:rgba(158,36,23,.35);line-height:.8;position:absolute;top:18px;right:24px}
+  .vm-card{border:1px solid var(--hair-light);padding:clamp(30px,4vw,52px);border-radius:6px;position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(252,246,239,.04),transparent)}
+  .vm-card .tag{font-family:var(--display);font-size:clamp(3rem,7vw,5rem);color:rgba(158,36,23,.4);line-height:.8;position:absolute;top:18px;right:24px}
   .vm-card h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.8rem;letter-spacing:-.01em;color:var(--offwhite);margin-bottom:1rem;position:relative}
   .vm-card p{font-size:1.22rem;color:rgba(252,246,239,.82)}
 
-  /* MANDATE goals */
-  .goals{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:2.5rem}
-  .goal{padding:32px 28px;border:1px solid var(--hair);border-radius:4px;background:var(--offwhite);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+  /* generic numbered grids */
+  .goals,.grow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:2.5rem}
+  .goal{padding:32px 28px;border:1px solid var(--hair);border-radius:6px;background:var(--offwhite);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
   .goal:hover{transform:translateY(-6px);box-shadow:0 24px 50px -28px rgba(139,26,16,.4);border-color:var(--red)}
   .goal .num{font-family:var(--display);font-size:1.6rem;color:var(--red);line-height:1}
   .goal h4{font-family:var(--display-alt);font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:1.02rem;margin:.8rem 0 .5rem}
@@ -248,7 +251,7 @@
   /* SERVICES */
   .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:2.5rem}
   .svc{
-    position:relative;padding:clamp(30px,3.5vw,46px);border-radius:4px;overflow:hidden;
+    position:relative;padding:clamp(30px,3.5vw,46px);border-radius:6px;overflow:hidden;
     background:var(--offwhite);border:1px solid var(--hair);transition:transform .35s ease,box-shadow .35s ease;
   }
   .svc.feature{grid-column:span 2;background:linear-gradient(135deg,var(--red),var(--red-bright));color:var(--offwhite);border-color:transparent}
@@ -259,34 +262,49 @@
   .svc .kicker{font-family:var(--display-alt);font-weight:800;text-transform:uppercase;letter-spacing:.16em;font-size:.66rem;color:var(--red);margin-bottom:.9rem}
   .svc.feature .kicker{color:var(--cream)}
   .svc p{font-size:1.1rem;color:rgba(17,17,17,.74)}
-  .svc.feature p{color:rgba(252,246,239,.9);max-width:62ch}
+  .svc.feature p{color:rgba(252,246,239,.92);max-width:62ch}
+
+  /* split feature band with photo */
+  .band{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;min-height:520px}
+  .band .media{position:relative;overflow:hidden}
+  .band .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .band .copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,6vw,90px)}
+  .band.reverse .media{order:2}
 
   /* SEGMENTS table */
   .seg-list{margin-top:2.5rem;border-top:1px solid var(--hair-light)}
-  .seg{display:grid;grid-template-columns:64px 1fr 1.3fr;gap:24px;align-items:start;padding:30px 0;border-bottom:1px solid var(--hair-light)}
+  .seg{display:grid;grid-template-columns:64px 1fr 1.3fr;gap:24px;align-items:start;padding:30px 0;border-bottom:1px solid var(--hair-light);transition:background .3s ease}
+  .seg:hover{background:rgba(252,246,239,.04)}
   .seg .sn{font-family:var(--display);font-size:2.2rem;color:var(--red-bright);line-height:.9}
   .seg h4{font-family:var(--display-alt);font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:1.05rem;color:var(--offwhite)}
   .seg p{font-size:1.1rem;color:rgba(252,246,239,.72)}
 
   /* POLICY / SDG */
-  .sdg-row{display:flex;gap:18px;flex-wrap:wrap;margin-top:2rem}
-  .sdg{display:flex;gap:16px;align-items:center;padding:18px 24px;border-radius:4px;background:var(--offwhite);border:1px solid var(--hair);flex:1 1 280px}
-  .sdg .badge{width:54px;height:54px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:1.5rem;color:#fff;flex:none}
+  .ndp{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:2.2rem 0 1rem}
+  .ndp .item{padding:24px;border:1px solid var(--hair);border-radius:6px;background:var(--offwhite)}
+  .ndp .item h4{font-family:var(--display-alt);font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:.92rem;color:var(--red);margin-bottom:.4rem}
+  .ndp .item p{font-size:1.04rem;color:rgba(17,17,17,.72)}
+  .sdg-row{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:1.4rem}
+  .sdg{display:flex;gap:16px;align-items:center;padding:18px 24px;border-radius:6px;background:var(--offwhite);border:1px solid var(--hair)}
+  .sdg .badge{width:54px;height:54px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:1.5rem;color:#fff;flex:none}
   .sdg.g4 .badge{background:#C5192D}
+  .sdg.g9 .badge{background:#FD6925}
+  .sdg.g10 .badge{background:#DD1367}
   .sdg.g17 .badge{background:#19486A}
   .sdg h4{font-family:var(--display-alt);font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-size:.82rem;line-height:1.3}
   .sdg p{font-size:1.02rem;color:rgba(17,17,17,.7)}
 
   /* CSR */
-  .csr-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:2.5rem}
-  .csr{padding:clamp(28px,3.5vw,44px);border-radius:4px;background:var(--offwhite);border:1px solid var(--hair);border-top:4px solid var(--red)}
-  .csr .ico{width:46px;height:46px;color:var(--red);margin-bottom:1rem}
-  .csr h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.5rem;margin-bottom:.5rem}
-  .csr p{font-size:1.1rem;color:rgba(17,17,17,.74)}
+  .csr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:2.5rem}
+  .csr{padding:clamp(26px,3vw,38px);border-radius:6px;background:rgba(252,246,239,.03);border:1px solid var(--hair-light);border-top:4px solid var(--red-bright);transition:transform .3s ease,background .3s ease}
+  .csr:hover{transform:translateY(-6px);background:rgba(252,246,239,.06)}
+  .csr .ico{width:44px;height:44px;color:var(--red-bright);margin-bottom:1rem}
+  .csr h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.35rem;margin-bottom:.5rem;color:var(--offwhite)}
+  .csr p{font-size:1.06rem;color:rgba(252,246,239,.78)}
 
   /* VALUE PROP pillars */
   .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:2.5rem}
-  .pillar{padding:clamp(30px,3.5vw,44px);border:1px solid var(--hair-light);border-radius:4px;background:linear-gradient(180deg,rgba(252,246,239,.04),transparent);transition:transform .3s ease,border-color .3s ease}
+  .pillar{padding:clamp(30px,3.5vw,44px);border:1px solid var(--hair-light);border-radius:6px;background:linear-gradient(180deg,rgba(252,246,239,.04),transparent);transition:transform .3s ease,border-color .3s ease}
   .pillar:hover{transform:translateY(-6px);border-color:var(--red-bright)}
   .pillar .n{font-family:var(--display);font-size:1.4rem;color:var(--red-bright)}
   .pillar h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.5rem;margin:.6rem 0 .6rem;color:var(--offwhite)}
@@ -294,19 +312,35 @@
 
   /* REVENUE */
   .rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px);align-items:center}
-  .rev-streams{display:flex;flex-direction:column;gap:14px;margin-top:1.5rem}
+  .rev-streams{display:flex;flex-direction:column;gap:16px;margin-top:1.5rem}
   .rev-streams .row{display:flex;align-items:center;gap:16px}
-  .rev-streams .bar{height:14px;border-radius:8px;background:linear-gradient(90deg,var(--red),var(--red-bright));box-shadow:0 4px 14px -6px var(--red-glow)}
+  .rev-streams .bar{height:14px;border-radius:8px;background:linear-gradient(90deg,var(--red),var(--red-bright));box-shadow:0 4px 14px -6px var(--red-glow);transition:width 1.1s cubic-bezier(.16,1,.3,1)}
   .rev-streams .lab{font-family:var(--display-alt);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.74rem;white-space:nowrap}
 
+  /* FINANCIAL STEWARDSHIP */
+  .fin-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,70px);align-items:center}
+  .fin-list{display:flex;flex-direction:column;gap:16px;margin-top:1.4rem}
+  .fin-list .row{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;border:1px solid var(--hair-light);border-radius:6px;background:rgba(252,246,239,.03)}
+  .fin-list .row .ico{width:34px;height:34px;color:var(--red-bright);flex:none}
+  .fin-list .row h4{font-family:var(--display-alt);font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:.95rem;color:var(--offwhite);margin-bottom:.2rem}
+  .fin-list .row p{font-size:1.02rem;color:rgba(252,246,239,.72)}
+
+  /* FILM */
+  .film-wrap{position:relative;border-radius:8px;overflow:hidden;margin-top:2.6rem;box-shadow:0 50px 100px -50px rgba(0,0,0,.7);background:#000}
+  .film-wrap video{width:100%;display:block;aspect-ratio:16/9;background:#000}
+  .film-poster{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;cursor:pointer;background:rgba(0,0,0,.25)}
+  .film-poster.hidden{display:none}
+  .film-poster .play{width:84px;height:84px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 40px -8px var(--red-glow);transition:transform .3s ease}
+  .film-poster:hover .play{transform:scale(1.08)}
+  .film-poster .play svg{width:34px;height:34px;color:var(--offwhite);margin-left:4px}
+
   /* GROWTH */
-  .grow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:2.5rem}
-  .grow{padding:clamp(30px,3.5vw,44px);border-radius:4px;background:var(--offwhite);border:1px solid var(--hair);position:relative;overflow:hidden;transition:transform .35s ease,box-shadow .35s ease}
-  .grow:hover{transform:translateY(-6px);box-shadow:0 30px 60px -34px rgba(139,26,16,.45)}
-  .grow .ico{width:50px;height:50px;color:var(--red);margin-bottom:1.1rem}
-  .grow h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.45rem;margin-bottom:.5rem}
-  .grow p{font-size:1.08rem;color:rgba(17,17,17,.74)}
-  .grow-close{margin-top:2.6rem;font-size:clamp(1.3rem,2.6vw,1.8rem);font-style:italic;text-align:center;max-width:50ch;margin-left:auto;margin-right:auto;color:var(--ink)}
+  .grow{padding:clamp(30px,3.5vw,44px);border-radius:6px;background:rgba(252,246,239,.03);border:1px solid var(--hair-light);position:relative;overflow:hidden;transition:transform .35s ease,background .35s ease}
+  .grow:hover{transform:translateY(-6px);background:rgba(252,246,239,.06)}
+  .grow .ico{width:50px;height:50px;color:var(--red-bright);margin-bottom:1.1rem}
+  .grow h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.45rem;margin-bottom:.5rem;color:var(--offwhite)}
+  .grow p{font-size:1.08rem;color:rgba(252,246,239,.78)}
+  .grow-close{margin-top:2.6rem;font-size:clamp(1.3rem,2.6vw,1.8rem);font-style:italic;text-align:center;max-width:52ch;margin-left:auto;margin-right:auto;color:var(--offwhite)}
 
   /* CONTACT */
   .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px)}
@@ -345,6 +379,10 @@
   .foot-bottom .soc a{width:34px;height:34px;border:1px solid var(--hair-light);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.25s}
   .foot-bottom .soc a:hover{background:var(--red);border-color:var(--red);color:#fff}
   .foot-bottom .soc svg{width:16px;height:16px}
+  .foot-credit{text-align:center;padding-top:22px;font-family:var(--display-alt);font-size:.78rem;letter-spacing:.04em;color:rgba(252,246,239,.5)}
+  .foot-credit a{color:rgba(252,246,239,.78);font-weight:700}
+  .foot-credit a span{color:var(--red-bright)}
+  .foot-credit a:hover{color:var(--offwhite)}
 
   /* WHATSAPP FLOAT */
   .wa-float{
@@ -368,17 +406,22 @@
   @media (prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
     .reveal{opacity:1;transform:none}
+    .hero-bg img{animation:none}
     html{scroll-behavior:auto}
   }
 
   /* RESPONSIVE */
   @media (max-width:980px){
     .hero-grid{grid-template-columns:1fr}
-    .tower-art{display:none}
-    .about-grid,.vm-grid,.csr-grid,.contact-grid,.rev-grid{grid-template-columns:1fr}
-    .goals,.pillars,.grow-grid{grid-template-columns:1fr}
+    .tower-art{height:46vh;order:-1}
+    .about-grid,.vm-grid,.contact-grid,.rev-grid,.fin-grid{grid-template-columns:1fr}
+    .goals,.pillars,.grow-grid,.ndp{grid-template-columns:1fr}
+    .sdg-row{grid-template-columns:1fr}
     .svc-grid{grid-template-columns:1fr}
     .svc.feature{grid-column:auto}
+    .band{grid-template-columns:1fr}
+    .band .media{min-height:320px}
+    .band.reverse .media{order:0}
     .stats{grid-template-columns:1fr 1fr}
     .seg{grid-template-columns:48px 1fr;gap:16px}
     .seg p{grid-column:1 / -1;margin-top:-10px}
@@ -409,7 +452,6 @@
 <header id="top">
   <div class="wrap nav-inner">
     <a href="#top" class="brand" aria-label="Spearnet Towers home">
-      <!-- LOGO: tower + concentric red signal waves -->
       <svg viewBox="0 0 64 64" role="img" aria-label="Spearnet Towers logo">
         <g fill="none" stroke="#9E2417" stroke-width="2.4" stroke-linecap="round">
           <path d="M14 20a26 26 0 0 1 36 0"/>
@@ -429,10 +471,10 @@
     <nav class="links" id="nav" aria-label="Primary">
       <a href="#top">Home</a>
       <a href="#about">About</a>
-      <a href="#vision">Vision &amp; Mission</a>
+      <a href="#vision">Vision</a>
       <a href="#services">Services</a>
+      <a href="#film">Film</a>
       <a href="#impact">Impact</a>
-      <a href="#growth">Growth</a>
       <a href="#contact" class="btn">Get in Touch</a>
     </nav>
 
@@ -444,7 +486,9 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero" aria-label="Introduction">
-  <div class="stars" aria-hidden="true"></div>
+  <div class="hero-bg" aria-hidden="true">
+    <img src="/img/hero-tower-night.jpg" alt="" fetchpriority="high" />
+  </div>
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow hero-eyebrow">Telecommunications Infrastructure · South Africa</span>
@@ -457,30 +501,11 @@
       </div>
     </div>
     <div class="tower-art" aria-hidden="true">
-      <!-- Hero tower silhouette with signal -->
-      <svg viewBox="0 0 200 420" xmlns="http://www.w3.org/2000/svg">
-        <g fill="none" stroke="#F7E8DD" stroke-opacity="0.85" stroke-width="2">
-          <path d="M70 70a55 55 0 0 1 60 0"/>
-          <path d="M80 84a38 38 0 0 1 40 0"/>
-          <path d="M90 98a20 20 0 0 1 20 0"/>
-        </g>
-        <circle cx="100" cy="66" r="5" fill="#9E2417"/>
-        <g stroke="#F7E8DD" stroke-width="3" stroke-linecap="round" fill="none">
-          <line x1="100" y1="70" x2="100" y2="120"/>
-          <!-- mast lattice -->
-          <line x1="80" y1="410" x2="100" y2="120"/>
-          <line x1="120" y1="410" x2="100" y2="120"/>
-          <line x1="86" y1="150" x2="114" y2="150"/>
-          <line x1="84" y1="185" x2="116" y2="185"/>
-          <line x1="82" y1="225" x2="118" y2="225"/>
-          <line x1="80" y1="270" x2="120" y2="270"/>
-          <line x1="78" y1="320" x2="122" y2="320"/>
-          <line x1="76" y1="370" x2="124" y2="370"/>
-          <path d="M86 150 L114 185 M114 150 L86 185 M84 185 L116 225 M116 185 L84 225 M82 225 L118 270 M118 225 L82 270 M80 270 L120 320 M120 270 L80 320 M78 320 L122 370 M122 320 L78 370"/>
-        </g>
-      </svg>
+      <canvas id="towerCanvas"></canvas>
+      <div class="tower-hint">Drag to rotate · scroll to explore</div>
     </div>
   </div>
+  <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><span class="dot"></span></div>
 </section>
 
 <!-- ============ ABOUT ============ -->
@@ -490,26 +515,10 @@
       <span class="eyebrow">Company Overview</span>
       <h2 class="h-section">Building the<br>Backbone</h2>
       <p>Spearnet Towers (Pty) Ltd is a pioneering South African telecommunications infrastructure company dedicated to developing, deploying and managing innovative, efficient cellphone tower solutions.</p>
-      <p>We exist to enhance mobile network coverage — particularly across underserved and remote regions — in pursuit of a digitally empowered South Africa. We believe robust digital connectivity is essential infrastructure: the foundation for economic growth, social inclusion and stronger public services.</p>
+      <p>Guided by the President's vision for a digitally empowered South Africa, Spearnet enhances mobile network coverage — particularly across underserved and remote regions. We believe robust digital connectivity is essential infrastructure: the foundation for economic growth, social inclusion and stronger public services.</p>
     </div>
-    <div class="figure reveal" data-d="1" role="img" aria-label="A telecommunications tower silhouetted against a dusk savanna sky">
-      <div class="sky" aria-hidden="true"></div>
-      <svg viewBox="0 0 200 380" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <g fill="none" stroke="#F7E8DD" stroke-opacity=".9" stroke-width="2.4">
-          <path d="M68 60a58 58 0 0 1 64 0"/>
-          <path d="M80 76a40 40 0 0 1 40 0"/>
-        </g>
-        <circle cx="100" cy="56" r="5" fill="#FCF6EF"/>
-        <g stroke="#FCF6EF" stroke-width="3" stroke-linecap="round" fill="none" stroke-opacity=".95">
-          <line x1="82" y1="372" x2="100" y2="100"/>
-          <line x1="118" y1="372" x2="100" y2="100"/>
-          <line x1="88" y1="140" x2="112" y2="140"/>
-          <line x1="86" y1="185" x2="114" y2="185"/>
-          <line x1="84" y1="235" x2="116" y2="235"/>
-          <line x1="83" y1="295" x2="117" y2="295"/>
-          <path d="M88 140 L112 185 M112 140 L88 185 M86 185 L114 235 M114 185 L86 235 M84 235 L116 295 M116 235 L84 295"/>
-        </g>
-      </svg>
+    <div class="figure reveal" data-d="1">
+      <img src="/img/aerial-hills.jpg" alt="Aerial view of a Spearnet telecommunications tower on a green hilltop in rural South Africa" loading="lazy" />
       <div class="cap">Connectivity, where it has never reached</div>
     </div>
   </div>
@@ -556,10 +565,20 @@
       <p class="lead">A clear remit: connect the country, grow the economy, and do it sustainably.</p>
     </div>
     <div class="goals">
-      <div class="goal reveal"><div class="num">01</div><h4>Expand Connectivity</h4><p>Extend reliable mobile coverage across urban, rural and peri-urban areas — reaching the communities the market has overlooked.</p></div>
-      <div class="goal reveal" data-d="1"><div class="num">02</div><h4>Drive Economic Growth</h4><p>Treat connectivity as economic infrastructure — unlocking opportunity, enterprise and access wherever a tower rises.</p></div>
-      <div class="goal reveal" data-d="2"><div class="num">03</div><h4>Build Sustainably</h4><p>Operate a sustainable business model that prioritises innovation, responsible practice and community empowerment.</p></div>
+      <div class="goal reveal"><div class="num">01</div><h4>Expand Connectivity</h4><p>Expand mobile connectivity across urban, rural and peri-urban areas — reaching the communities the market has overlooked.</p></div>
+      <div class="goal reveal" data-d="1"><div class="num">02</div><h4>Cultivate Partnerships</h4><p>Cultivate partnerships that enhance service delivery and stimulate local economic growth wherever a tower rises.</p></div>
+      <div class="goal reveal" data-d="2"><div class="num">03</div><h4>Build Sustainably</h4><p>Operate a sustainable business model that prioritises innovation and community empowerment.</p></div>
     </div>
+  </div>
+</section>
+
+<!-- ============ FEATURE BAND: technician ============ -->
+<section class="band on-red reveal" aria-label="Our people on the ground">
+  <div class="media"><img src="/img/technician.jpg" alt="A Spearnet Towers technician in branded gear surveying a tower at dusk" loading="lazy" /></div>
+  <div class="copy">
+    <span class="eyebrow">On The Ground</span>
+    <h2 class="h-section" style="margin-bottom:1rem">People Behind<br>the Signal</h2>
+    <p style="font-size:1.18rem;color:rgba(252,246,239,.9);max-width:46ch">From site acquisition to steel in the ground, our teams deliver and maintain infrastructure that communities can depend on — built to the highest standards, designed to last.</p>
   </div>
 </section>
 
@@ -581,44 +600,55 @@
       <div class="svc reveal">
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
         <h3>Built-to-Suit</h3>
-        <p>Custom tower construction plus long-term leasing for operators expanding into underserved markets — reducing their capital expenditure and accelerating deployment.</p>
+        <p>Custom tower construction plus long-term leasing for operators expanding into underserved markets — reducing capital expenditure and accelerating deployment.</p>
       </div>
       <div class="svc reveal" data-d="1">
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 21h18M4 21V10h16v11M9 21v-5h6v5M12 3l8 4H4z"/></svg>
         <h3>Government &amp; Private Contracts</h3>
         <p>Public-private partnerships, grants and service-level agreements that deliver connectivity to schools, clinics and government offices.</p>
       </div>
-      <div class="svc reveal" data-d="2" style="grid-column:span 2">
+      <div class="svc reveal" data-d="2">
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
         <h3>Infrastructure Sharing &amp; Co-location</h3>
-        <p>Hosting third-party equipment on Spearnet towers — for government bodies, smart-city initiatives and private networks. One structure, many tenants, maximum efficiency.</p>
+        <p>Hosting third-party equipment on Spearnet towers — for government bodies, smart-city initiatives and private networks.</p>
+      </div>
+      <div class="svc reveal" data-d="2" style="grid-column:span 2">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 3v18h18M7 15l3-4 3 3 4-6"/></svg>
+        <span class="kicker">Emerging Stream</span>
+        <h3>Data &amp; Analytics Services</h3>
+        <p>Turning network and site infrastructure into insight — coverage analytics, utilisation data and intelligence that helps operators and partners plan smarter rollouts.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ POLICY-DRIVEN MODEL / SEGMENTS ============ -->
+<!-- ============ PARTNERSHIP-DRIVEN MODEL ============ -->
 <section class="section-pad on-red">
   <div class="wrap on-dark" style="background:transparent">
     <div class="reveal">
       <span class="eyebrow">Who We Serve</span>
-      <h2 class="h-section">A Policy-Driven<br>Model</h2>
+      <h2 class="h-section">A Partnership-<br>Driven Model</h2>
     </div>
     <div class="seg-list">
       <div class="seg reveal">
         <div class="sn">01</div>
         <h4>Telecommunications Network Providers</h4>
-        <p>Reliable infrastructure in high-demand and underserved areas — enabling continuous, high-quality service.</p>
+        <p>Delivering reliable infrastructure in high-demand and underserved areas to ensure continuous, high-quality service.</p>
       </div>
       <div class="seg reveal" data-d="1">
         <div class="sn">02</div>
         <h4>Local Municipalities &amp; Traditional Authorities</h4>
-        <p>Improved service delivery and community upliftment through better connectivity.</p>
+        <p>Enabling improved service delivery and community upliftment through better connectivity.</p>
       </div>
       <div class="seg reveal" data-d="2">
         <div class="sn">03</div>
         <h4>Government Departments &amp; Agencies</h4>
         <p>Advancing digital transformation and public-service efficiency through strategic collaboration.</p>
+      </div>
+      <div class="seg reveal" data-d="3">
+        <div class="sn">04</div>
+        <h4>Development Institutions &amp; Investors</h4>
+        <p>Aligning resources and objectives to develop impactful, community-focused solutions.</p>
       </div>
     </div>
   </div>
@@ -632,16 +662,27 @@
       <h2 class="h-section">Policy Alignment &amp;<br>Development Goals</h2>
       <p class="lead">Spearnet Towers is fully aligned with South Africa's National Development Plan and broader global objectives — including the United Nations Sustainable Development Goals.</p>
     </div>
-    <div class="sdg-row">
-      <div class="sdg g4 reveal">
-        <div class="badge">4</div>
-        <div><h4>Goal 4 · Quality Education</h4><p>Enhanced connectivity to learning institutions, opening access to digital education.</p></div>
-      </div>
-      <div class="sdg g17 reveal" data-d="1">
-        <div class="badge">17</div>
-        <div><h4>Goal 17 · Partnerships for the Goals</h4><p>Strong multi-stakeholder cooperation across operators, government and communities.</p></div>
-      </div>
+    <div class="ndp">
+      <div class="ndp item reveal"><h4>Expanding ICT Access</h4><p>Enabling widespread digital participation and entrepreneurship.</p></div>
+      <div class="ndp item reveal" data-d="1"><h4>Resilient Infrastructure</h4><p>Building robust networks that promote inclusive growth.</p></div>
+      <div class="ndp item reveal" data-d="2"><h4>Job Opportunities</h4><p>Generating employment across construction, maintenance and tech sectors.</p></div>
     </div>
+    <div class="sdg-row">
+      <div class="sdg g9 reveal"><div class="badge">9</div><div><h4>Goal 9 · Industry, Innovation &amp; Infrastructure</h4><p>Resilient infrastructure and inclusive, sustainable industrialisation.</p></div></div>
+      <div class="sdg g10 reveal" data-d="1"><div class="badge">10</div><div><h4>Goal 10 · Reduced Inequalities</h4><p>Closing the digital divide through inclusion and access.</p></div></div>
+      <div class="sdg g4 reveal" data-d="2"><div class="badge">4</div><div><h4>Goal 4 · Quality Education</h4><p>Enhancing connectivity to learning institutions and digital education.</p></div></div>
+      <div class="sdg g17 reveal" data-d="3"><div class="badge">17</div><div><h4>Goal 17 · Partnerships for the Goals</h4><p>Strong multi-stakeholder cooperation across operators, government and communities.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURE BAND: community ============ -->
+<section class="band reverse on-dark reveal" aria-label="Connecting communities">
+  <div class="media"><img src="/img/community-tablet.jpg" alt="A young woman holds a tablet beneath a Spearnet tower outside a community health centre at sunset" loading="lazy" /></div>
+  <div class="copy">
+    <span class="eyebrow">Digital Inclusion</span>
+    <h2 class="h-section" style="margin-bottom:1rem">A Signal That<br>Changes Lives</h2>
+    <p style="font-size:1.18rem;color:rgba(252,246,239,.85);max-width:46ch">When connectivity reaches a clinic, a school or a home for the first time, it unlocks education, healthcare, enterprise and opportunity. That is the change every Spearnet tower is built to deliver.</p>
   </div>
 </section>
 
@@ -657,12 +698,46 @@
       <div class="csr reveal">
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3 2 8l10 5 10-5-10-5zM6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5M22 8v6"/></svg>
         <h3>Education &amp; Digital Literacy</h3>
-        <p>Empowering schools and communities with the digital skills and resources to take part in the connected economy.</p>
+        <p>Empowering schools and communities with digital skills and resources to take part in the connected economy.</p>
       </div>
       <div class="csr reveal" data-d="1">
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 20c0-2 .8-3.8 2.1-5 .9.2 3.9 1.2 3.9 5"/></svg>
         <h3>Community Development</h3>
         <p>Supporting local entrepreneurs and fostering tech-enabled small businesses, so connectivity translates into livelihoods.</p>
+      </div>
+      <div class="csr reveal" data-d="2">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 22c5-3 8-7 8-12V5l-8-3-8 3v5c0 5 3 9 8 12z"/><path d="M9 12l2 2 4-4"/></svg>
+        <h3>Environmental Sustainability</h3>
+        <p>Incorporating eco-friendly practices, renewable energy solutions and responsible waste management in our operations.</p>
+      </div>
+      <div class="csr reveal" data-d="3">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 7h-9M14 17H5M5 7a3 3 0 1 0 6 0 3 3 0 0 0-6 0M13 17a3 3 0 1 0 6 0 3 3 0 0 0-6 0"/></svg>
+        <h3>Employee Engagement</h3>
+        <p>Encouraging our team to volunteer and take part in community service initiatives, fostering a culture of giving back.</p>
+      </div>
+      <div class="csr reveal" data-d="4">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3l8 4v5c0 4.5-3.2 7.5-8 9-4.8-1.5-8-4.5-8-9V7l8-4z"/><path d="M12 8v5M12 16h.01"/></svg>
+        <h3>Ethical Governance</h3>
+        <p>Upholding transparency and integrity in all our dealings, operating to the highest ethical standards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OVERVIEW FILM ============ -->
+<section id="film" class="section-pad">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Watch</span>
+      <h2 class="h-section">The Spearnet Story</h2>
+      <p class="lead">A short overview of who we are, how we build, and the future we're connecting — in two minutes.</p>
+    </div>
+    <div class="film-wrap reveal" data-d="1">
+      <video id="overviewVideo" preload="none" playsinline controls poster="/img/overview-poster.jpg">
+        <source src="/video/overview.mp4" type="video/mp4" />
+      </video>
+      <div class="film-poster" id="filmPoster" role="button" tabindex="0" aria-label="Play the Spearnet Towers overview film">
+        <div class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
       </div>
     </div>
   </div>
@@ -684,28 +759,57 @@
 </section>
 
 <!-- ============ REVENUE MODEL ============ -->
-<section class="section-pad">
+<section class="section-pad on-dark">
   <div class="wrap rev-grid">
     <div class="reveal">
       <span class="eyebrow">Built to Last</span>
-      <h2 class="h-section">Revenue &amp;<br>Stewardship</h2>
-      <p>Spearnet Towers operates a sustainable, multi-stream revenue model — leasing, built-to-suit, government and private contracts, and co-location — underpinned by responsible financial stewardship. Diversified income and disciplined operations make the business resilient and investor-credible.</p>
+      <h2 class="h-section">Revenue Model</h2>
+      <p style="color:rgba(252,246,239,.82)">Spearnet Towers operates a sustainable, multi-stream revenue model — tower leasing, built-to-suit, infrastructure sharing &amp; co-location, government and private-sector contracts, and emerging data &amp; analytics services. Diversified income makes the business resilient and investor-credible.</p>
     </div>
     <div class="reveal" data-d="1">
-      <div class="rev-streams" aria-hidden="true">
-        <div class="row"><span class="bar" style="width:78%"></span><span class="lab">Tower Leasing</span></div>
-        <div class="row"><span class="bar" style="width:60%"></span><span class="lab">Built-to-Suit</span></div>
-        <div class="row"><span class="bar" style="width:48%"></span><span class="lab">Gov &amp; Private Contracts</span></div>
-        <div class="row"><span class="bar" style="width:38%"></span><span class="lab">Co-location</span></div>
+      <div class="rev-streams" id="revStreams" aria-hidden="true">
+        <div class="row"><span class="bar" data-w="82%" style="width:0"></span><span class="lab">Tower Leasing</span></div>
+        <div class="row"><span class="bar" data-w="62%" style="width:0"></span><span class="lab">Built-to-Suit</span></div>
+        <div class="row"><span class="bar" data-w="52%" style="width:0"></span><span class="lab">Gov &amp; Private Contracts</span></div>
+        <div class="row"><span class="bar" data-w="42%" style="width:0"></span><span class="lab">Infra Sharing &amp; Co-location</span></div>
+        <div class="row"><span class="bar" data-w="30%" style="width:0"></span><span class="lab">Data &amp; Analytics</span></div>
       </div>
-      <p class="form-note" style="color:rgba(17,17,17,.55)">Indicative weighting of revenue streams.</p>
+      <p class="form-note">Indicative weighting of revenue streams.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINANCIAL STEWARDSHIP ============ -->
+<section class="section-pad on-dark" style="border-top:1px solid var(--hair-light)">
+  <div class="wrap fin-grid">
+    <div class="figure tall reveal">
+      <img src="/img/finance-red.jpg" alt="A red calculator on a red surface, representing disciplined financial stewardship" loading="lazy" />
+      <div class="cap">Disciplined. Diversified. Resilient.</div>
+    </div>
+    <div class="reveal" data-d="1">
+      <span class="eyebrow">Stewardship</span>
+      <h2 class="h-section">Financial<br>Stewardship</h2>
+      <div class="fin-list">
+        <div class="row">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8M21 7v6M21 7h-6"/></svg>
+          <div><h4>Consistent Revenue Growth</h4><p>A diversified, recurring income base that compounds as the tower portfolio scales.</p></div>
+        </div>
+        <div class="row">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/></svg>
+          <div><h4>Strategic Investment in Innovation</h4><p>Capital deployed ahead of the curve — into technology and the regions poised for growth.</p></div>
+        </div>
+        <div class="row">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 21V10M10 21V4M16 21v-8M22 21H2"/></svg>
+          <div><h4>Cost-Efficient Operations</h4><p>Shared, multi-tenant infrastructure keeps deployment lean and margins strong.</p></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============ GROWTH ============ -->
-<section id="growth" class="section-pad on-dark">
-  <div class="wrap">
+<section id="growth" class="section-pad on-red">
+  <div class="wrap on-dark" style="background:transparent">
     <div class="reveal">
       <span class="eyebrow">The Road Ahead</span>
       <h2 class="h-section">Future Growth<br>Strategy</h2>
@@ -732,8 +836,8 @@
 </section>
 
 <!-- ============ CONTACT ============ -->
-<section id="contact" class="section-pad on-red">
-  <div class="wrap on-dark" style="background:transparent">
+<section id="contact" class="section-pad on-dark">
+  <div class="wrap">
     <div class="reveal" style="margin-bottom:2.5rem">
       <span class="eyebrow">Let's Build</span>
       <h2 class="h-section">Get in Touch</h2>
@@ -780,12 +884,8 @@
           <div><div class="k">Enquiries</div><div class="v"><a href="mailto:info@spearnettowers.com">info@spearnettowers.com</a></div></div>
         </div>
         <div class="item">
-          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg>
-          <div><div class="k">Website</div><div class="v"><a href="https://www.spearnettowers.com">www.spearnettowers.com</a></div></div>
-        </div>
-        <div class="item">
           <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-          <div><div class="k">Address</div><div class="v">Fairview Gardens, Umhlali</div></div>
+          <div><div class="k">Address</div><div class="v">Fairview Gardens, Umhlali, KwaZulu-Natal</div></div>
         </div>
         <a href="https://wa.me/27834770979" class="btn" style="background:#25D366;border-color:#25D366;margin-top:6px" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm5.5 14.2c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.5c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8.9.8 1.7 1.1 2 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.1.1.5-.1 1z"/></svg>
@@ -817,15 +917,14 @@
         <a href="#about">About</a>
         <a href="#vision">Vision &amp; Mission</a>
         <a href="#services">Services</a>
+        <a href="#film">The Spearnet Story</a>
         <a href="#impact">Impact</a>
-        <a href="#growth">Growth</a>
       </div>
       <div class="foot-col">
         <h5>Contact</h5>
         <a href="tel:+27834770979">083 477 0979</a>
         <a href="mailto:info@spearnettowers.com">info@spearnettowers.com</a>
         <a href="https://wa.me/27834770979" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="https://www.spearnettowers.com">www.spearnettowers.com</a>
         <span style="display:block;padding:5px 0;font-size:1rem;color:rgba(252,246,239,.7)">Fairview Gardens, Umhlali</span>
       </div>
     </div>
@@ -837,6 +936,9 @@
         <a href="tel:+27834770979" aria-label="Phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5c0 9 6 15 15 15l2.5-3.5-4-2-2 2c-3-1.5-5.5-4-7-7l2-2-2-4L4 5z"/></svg></a>
       </div>
     </div>
+    <div class="foot-credit">
+      Website by <a href="https://www.kwahlelwagroup.co.za" target="_blank" rel="noopener">Koll8 <span>(Kwahlelwa Group)</span></a>
+    </div>
   </div>
 </footer>
 
@@ -845,11 +947,12 @@
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm5.5 14.2c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.5c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8.9.8 1.7 1.1 2 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.1.1.5-.1 1z"/></svg>
 </a>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
   // Year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Sticky header shadow
+  // Sticky header
   const header = document.getElementById('top');
   const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 24);
   onScroll();
@@ -873,6 +976,24 @@
   }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+  // Revenue bars animate on view
+  const rev = document.getElementById('revStreams');
+  if (rev){
+    const rio = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ rev.querySelectorAll('.bar').forEach(b=>{ b.style.width=b.dataset.w; }); rio.disconnect(); } });
+    },{threshold:.4});
+    rio.observe(rev);
+  }
+
+  // Overview film: click poster to play
+  const poster = document.getElementById('filmPoster');
+  const video = document.getElementById('overviewVideo');
+  if (poster && video){
+    const play = () => { poster.classList.add('hidden'); video.play(); };
+    poster.addEventListener('click', play);
+    poster.addEventListener('keydown', (e)=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); play(); } });
+  }
+
   // Form validation (front-end only)
   const fields = {
     'f-name':   v => v.trim().length > 0,
@@ -881,7 +1002,6 @@
   };
   const submitBtn = document.getElementById('submitBtn');
   const success = document.getElementById('formSuccess');
-
   submitBtn.addEventListener('click', () => {
     let valid = true;
     for (const [id, test] of Object.entries(fields)) {
@@ -892,7 +1012,6 @@
     }
     if (valid) {
       success.classList.add('show');
-      // Build a mailto handoff so the message can actually be sent without a backend
       const name = document.getElementById('f-name').value.trim();
       const email = document.getElementById('f-email').value.trim();
       const company = document.getElementById('f-company').value.trim();
@@ -902,11 +1021,125 @@
       setTimeout(() => { window.location.href = `mailto:info@spearnettowers.com?subject=${subject}&body=${body}`; }, 600);
     }
   });
-
-  // Clear error on input
   document.querySelectorAll('.field input, .field textarea').forEach(el => {
     el.addEventListener('input', () => el.closest('.field').classList.remove('invalid'));
   });
+
+  // ---------------- 3D INTERACTIVE TOWER ----------------
+  (function(){
+    const canvas = document.getElementById('towerCanvas');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!canvas || typeof THREE === 'undefined') return;
+
+    let renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+    } catch(e){ return; }
+    renderer.setClearColor(0x000000, 0);
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
+    camera.position.set(0, 1.5, 16);
+    camera.lookAt(0, 1.5, 0);
+
+    const cream = 0xF7E8DD, red = 0x9E2417;
+    const group = new THREE.Group();
+    scene.add(group);
+
+    // ---- Build a tapered lattice mast from line segments ----
+    const segs = 9, segH = 1.5, baseR = 1.7, topR = 0.55, H = segs*segH;
+    function radiusAt(i){ return baseR + (topR-baseR)*(i/segs); }
+    function legXY(i, leg){ const r = radiusAt(i); const a = leg*Math.PI/2 + Math.PI/4; return [Math.cos(a)*r, Math.sin(a)*r]; }
+    const pts = [];
+    for (let leg=0; leg<4; leg++){
+      for (let i=0;i<segs;i++){
+        const [x1,z1]=legXY(i,leg), [x2,z2]=legXY(i+1,leg);
+        pts.push(x1,i*segH,z1, x2,(i+1)*segH,z2); // legs
+      }
+    }
+    for (let i=0;i<=segs;i++){ // horizontal rings
+      const r=radiusAt(i); const ring=[];
+      for(let leg=0;leg<4;leg++){ const [x,z]=legXY(i,leg); ring.push([x,i*segH,z]); }
+      for(let k=0;k<4;k++){ const a=ring[k], b=ring[(k+1)%4]; pts.push(a[0],a[1],a[2], b[0],b[1],b[2]); }
+    }
+    for (let leg=0; leg<4; leg++){ // X bracing per face
+      const next=(leg+1)%4;
+      for (let i=0;i<segs;i++){
+        const [ax,az]=legXY(i,leg),[bx,bz]=legXY(i+1,next);
+        const [cx,cz]=legXY(i,next),[dx,dz]=legXY(i+1,leg);
+        pts.push(ax,i*segH,az, bx,(i+1)*segH,bz);
+        pts.push(cx,i*segH,cz, dx,(i+1)*segH,dz);
+      }
+    }
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(pts,3));
+    const mat = new THREE.LineBasicMaterial({color:cream, transparent:true, opacity:.82});
+    const lattice = new THREE.LineSegments(geo, mat);
+    group.add(lattice);
+
+    // top mast + beacon
+    const mastGeo = new THREE.BufferGeometry();
+    mastGeo.setAttribute('position', new THREE.Float32BufferAttribute([0,H,0, 0,H+1.6,0],3));
+    group.add(new THREE.LineSegments(mastGeo, new THREE.LineBasicMaterial({color:cream, transparent:true, opacity:.9})));
+    const beacon = new THREE.Mesh(new THREE.SphereGeometry(0.16,16,16), new THREE.MeshBasicMaterial({color:red}));
+    beacon.position.set(0,H+1.7,0); group.add(beacon);
+
+    // antenna panels near top
+    for(let leg=0;leg<3;leg++){
+      const [x,z]=legXY(segs-0.5, leg);
+      const panel=new THREE.Mesh(new THREE.BoxGeometry(0.12,0.7,0.28), new THREE.MeshBasicMaterial({color:cream, transparent:true, opacity:.5}));
+      panel.position.set(x*0.8,H-0.6,z*0.8); panel.lookAt(0,H-0.6,0); group.add(panel);
+    }
+
+    // signal rings
+    const rings=[];
+    for(let i=0;i<3;i++){
+      const ring=new THREE.Mesh(new THREE.TorusGeometry(1,0.03,8,64), new THREE.MeshBasicMaterial({color:red, transparent:true, opacity:.6}));
+      ring.position.set(0,H+1.7,0); ring.rotation.x=Math.PI/2; ring.userData.phase=i/3; group.add(ring); rings.push(ring);
+    }
+
+    // center the tower vertically in view
+    group.position.y = -H/2 + 0.5;
+
+    // interaction
+    let targetRotY = 0.5, curRotY = 0.5, pointerY = 0, dragging=false, lastX=0, scrollRot=0;
+    canvas.addEventListener('pointerdown', e=>{dragging=true; lastX=e.clientX; canvas.setPointerCapture(e.pointerId);});
+    canvas.addEventListener('pointerup', e=>{dragging=false;});
+    canvas.addEventListener('pointermove', e=>{
+      if(dragging){ targetRotY += (e.clientX-lastX)*0.01; lastX=e.clientX; }
+      const r=canvas.getBoundingClientRect();
+      pointerY = ((e.clientY-r.top)/r.height-0.5)*0.5;
+    });
+    window.addEventListener('scroll', ()=>{ scrollRot = window.scrollY*0.0016; }, {passive:true});
+
+    function resize(){
+      const r=canvas.getBoundingClientRect();
+      const w=Math.max(1,r.width), h=Math.max(1,r.height);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+      renderer.setSize(w,h,false);
+      camera.aspect=w/h; camera.updateProjectionMatrix();
+    }
+    window.addEventListener('resize', resize); resize();
+
+    let t=0;
+    function animate(){
+      requestAnimationFrame(animate);
+      t+=0.016;
+      if(!reduce && !dragging) targetRotY += 0.0024;
+      curRotY += (targetRotY + scrollRot - curRotY)*0.06;
+      group.rotation.y = curRotY;
+      group.rotation.x = pointerY*0.6;
+      beacon.material.opacity = 0.5+0.5*Math.abs(Math.sin(t*2));
+      rings.forEach((ring,i)=>{
+        let p=((t*0.4)+ring.userData.phase)%1;
+        const s=0.4+p*5.5;
+        ring.scale.set(s,s,s);
+        ring.material.opacity=Math.max(0,0.6*(1-p));
+      });
+      renderer.render(scene,camera);
+    }
+    animate();
+  })();
 </script>
 </body>
 </html>
