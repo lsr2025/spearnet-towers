@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Spearnet Towers | The Future Has Signal</title>
+<meta name="description" content="Spearnet Towers is a South African telecommunications infrastructure company developing and managing cellphone tower solutions — closing the digital divide across underserved and rural regions." />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Spearnet Towers | The Future Has Signal" />
+<meta property="og:description" content="Connecting South Africa, one tower at a time. Telecommunications tower infrastructure for underserved and rural communities." />
+<meta property="og:url" content="https://www.spearnettowers.com" />
+<meta property="og:site_name" content="Spearnet Towers" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Spearnet Towers | The Future Has Signal" />
+<meta name="twitter:description" content="Telecommunications tower infrastructure connecting underserved and rural South Africa." />
+<meta name="theme-color" content="#8B1A10" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+
+<!-- Organization JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Spearnet Towers (Pty) Ltd",
+  "url": "https://www.spearnettowers.com",
+  "slogan": "The Future Has Signal",
+  "description": "A South African telecommunications infrastructure company developing, deploying and managing cellphone tower solutions for underserved and rural regions.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Fairview Gardens, Umhlali",
+    "addressRegion": "KwaZulu-Natal",
+    "addressCountry": "ZA"
+  },
+  "telephone": "+27834770979",
+  "email": "info@spearnettowers.com",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+27834770979",
+    "contactType": "sales",
+    "areaServed": "ZA",
+    "availableLanguage": ["English", "Zulu"]
+  }
+}
+</script>
+
+<style>
+  :root{
+    --red:#8B1A10;
+    --red-bright:#9E2417;
+    --cream:#F7E8DD;
+    --ink:#111111;
+    --offwhite:#FCF6EF;
+    --red-glow:rgba(158,36,23,0.55);
+    --hair:rgba(17,17,17,0.12);
+    --hair-light:rgba(252,246,239,0.16);
+    --display:'Anton',sans-serif;
+    --display-alt:'Archivo',sans-serif;
+    --serif:'Cormorant Garamond',Georgia,serif;
+    --maxw:1240px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--serif);
+    background:var(--cream);
+    color:var(--ink);
+    font-size:1.18rem;
+    line-height:1.65;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* subtle paper grain over everything */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.04;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:var(--red);color:var(--offwhite)}
+
+  h1,h2,h3,.eyebrow,.btn,nav a,.wordmark{font-family:var(--display-alt)}
+  .display{font-family:var(--display);font-weight:400;text-transform:uppercase;line-height:.92;letter-spacing:-.01em}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+  section{position:relative}
+
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:.6em;
+    font-weight:800;text-transform:uppercase;letter-spacing:.22em;
+    font-size:.72rem;color:var(--red);margin-bottom:1.4rem;
+  }
+  .eyebrow::before{content:"";width:34px;height:2px;background:var(--red);display:inline-block}
+  .on-dark .eyebrow{color:var(--cream)}
+  .on-dark .eyebrow::before{background:var(--red-bright)}
+
+  .h-section{
+    font-family:var(--display);font-weight:400;text-transform:uppercase;
+    font-size:clamp(2.5rem,6vw,4.6rem);line-height:.95;letter-spacing:-.015em;
+    margin-bottom:1.6rem;
+  }
+  .lead{font-size:clamp(1.25rem,2.2vw,1.55rem);font-style:italic;color:rgba(17,17,17,.72);max-width:60ch}
+  .on-dark .lead{color:rgba(252,246,239,.78)}
+
+  /* ---------------- HEADER ---------------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    transition:background .4s ease, box-shadow .4s ease, padding .4s ease;
+    padding:18px 0;
+  }
+  header.scrolled{
+    background:rgba(247,232,221,.86);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    box-shadow:0 1px 0 var(--hair);padding:10px 0;
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{display:flex;align-items:center;gap:12px;color:var(--offwhite)}
+  header.scrolled .brand{color:var(--ink)}
+  .brand svg{width:38px;height:38px;flex:none}
+  .wordmark{font-weight:900;text-transform:uppercase;letter-spacing:.04em;font-size:1.05rem;line-height:1;color:inherit}
+  .wordmark span{color:var(--red-bright);display:block;font-size:.62rem;letter-spacing:.34em;font-weight:700;margin-top:3px}
+  header.scrolled .wordmark span{color:var(--red)}
+
+  nav.links{display:flex;align-items:center;gap:30px}
+  nav.links a{
+    font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;color:var(--offwhite);
+    position:relative;padding:4px 0;transition:color .3s ease;
+  }
+  header.scrolled nav.links a{color:var(--ink)}
+  nav.links a.btn{color:var(--offwhite)}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--red);transition:width .3s ease}
+  nav.links a:hover::after,nav.links a:focus-visible::after{width:100%}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.55em;
+    font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.78rem;
+    padding:.95em 1.6em;border-radius:2px;cursor:pointer;border:2px solid var(--red);
+    background:var(--red);color:var(--offwhite);transition:transform .25s ease,background .25s ease,color .25s ease,box-shadow .25s ease;
+    will-change:transform;
+  }
+  .btn:hover,.btn:focus-visible{background:var(--red-bright);transform:translateY(-2px);box-shadow:0 10px 24px -10px var(--red-glow)}
+  .btn.ghost{background:transparent;color:var(--red)}
+  .btn.ghost:hover{background:var(--red);color:var(--offwhite)}
+  .btn.ghost-light{background:transparent;color:var(--offwhite);border-color:var(--offwhite)}
+  .btn.ghost-light:hover{background:var(--offwhite);color:var(--ink)}
+
+  .menu-toggle{display:none;background:none;border:0;cursor:pointer;width:42px;height:42px;position:relative}
+  .menu-toggle span{position:absolute;left:9px;right:9px;height:2px;background:var(--offwhite);transition:.3s;border-radius:2px}
+  header.scrolled .menu-toggle span{background:var(--ink)}
+  .menu-toggle span:nth-child(1){top:14px}.menu-toggle span:nth-child(2){top:20px}.menu-toggle span:nth-child(3){top:26px}
+  body.menu-open .menu-toggle span:nth-child(1){top:20px;transform:rotate(45deg)}
+  body.menu-open .menu-toggle span:nth-child(2){opacity:0}
+  body.menu-open .menu-toggle span:nth-child(3){top:20px;transform:rotate(-45deg)}
+
+  /* ---------------- HERO ---------------- */
+  .hero{
+    min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;
+    background:
+      radial-gradient(120% 80% at 80% 10%, rgba(158,36,23,.55) 0%, rgba(158,36,23,0) 55%),
+      linear-gradient(160deg,#1a0805 0%, #2a0a05 30%, #5e150c 70%, #8B1A10 130%);
+    color:var(--offwhite);
+  }
+  .hero .stars{position:absolute;inset:0;opacity:.6;
+    background-image:
+      radial-gradient(1.5px 1.5px at 20% 30%, #fff, transparent),
+      radial-gradient(1px 1px at 60% 20%, #ffd9c7, transparent),
+      radial-gradient(1.5px 1.5px at 80% 40%, #fff, transparent),
+      radial-gradient(1px 1px at 35% 60%, #fff, transparent),
+      radial-gradient(1px 1px at 90% 70%, #ffd9c7, transparent),
+      radial-gradient(1.2px 1.2px at 10% 80%, #fff, transparent),
+      radial-gradient(1px 1px at 50% 85%, #fff, transparent);
+    background-repeat:no-repeat;
+  }
+  /* horizon glow */
+  .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:34%;
+    background:linear-gradient(to top, rgba(247,150,90,.28), transparent);pointer-events:none}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;width:100%;position:relative;z-index:2}
+  .hero-eyebrow{color:var(--cream);opacity:.9}
+  .hero h1{
+    font-family:var(--display);font-weight:400;text-transform:uppercase;
+    font-size:clamp(3.4rem,11vw,8.4rem);line-height:.86;letter-spacing:-.02em;color:var(--offwhite);
+    margin:.1em 0 .15em;
+  }
+  .hero .tagline{
+    font-family:var(--serif);font-style:italic;font-weight:500;
+    font-size:clamp(1.5rem,4vw,2.6rem);color:var(--cream);
+    border-left:3px solid var(--red-bright);padding-left:.7em;margin-bottom:1.4rem;display:inline-block;
+  }
+  .hero .support{font-size:1.2rem;max-width:46ch;color:rgba(252,246,239,.82);margin-bottom:2.2rem}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+
+  /* tower artwork in hero */
+  .tower-art{position:relative;height:min(60vh,520px);display:flex;align-items:flex-end;justify-content:center}
+  .tower-art svg{height:100%;width:auto;filter:drop-shadow(0 30px 50px rgba(0,0,0,.5))}
+
+  /* ---------------- generic section spacing ---------------- */
+  .section-pad{padding:clamp(70px,11vw,140px) 0}
+  .on-dark{background:var(--ink);color:var(--offwhite)}
+  .on-red{background:linear-gradient(135deg,var(--red) 0%,var(--red-bright) 100%);color:var(--offwhite)}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px);align-items:center}
+  .about-copy p+p{margin-top:1.1rem}
+  .figure{
+    position:relative;border-radius:4px;overflow:hidden;min-height:420px;
+    background:linear-gradient(155deg,#2a0a05,#7a1810 60%,#b5402c);
+    display:flex;align-items:flex-end;justify-content:center;
+    box-shadow:0 40px 80px -40px rgba(139,26,16,.6);
+  }
+  .figure .sky{position:absolute;inset:0;background:
+    radial-gradient(circle at 70% 22%, rgba(255,210,170,.35), transparent 45%),
+    radial-gradient(1px 1px at 25% 25%,#fff,transparent),
+    radial-gradient(1.4px 1.4px at 55% 18%,#fff,transparent),
+    radial-gradient(1px 1px at 80% 35%,#ffd9c7,transparent);background-repeat:no-repeat}
+  .figure svg{position:relative;height:78%;width:auto;z-index:2;filter:drop-shadow(0 20px 30px rgba(0,0,0,.45))}
+  .figure .cap{position:absolute;bottom:0;left:0;right:0;padding:18px 22px;z-index:3;
+    background:linear-gradient(to top,rgba(0,0,0,.55),transparent);
+    font-family:var(--display-alt);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.7rem;color:var(--cream)}
+
+  /* stat strip */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hair-light);border-top:1px solid var(--hair-light);border-bottom:1px solid var(--hair-light)}
+  .stat{background:var(--ink);padding:clamp(26px,4vw,42px) 22px;text-align:center}
+  .stat .n{font-family:var(--display);font-size:clamp(2.4rem,5vw,3.6rem);color:var(--red-bright);line-height:1}
+  .stat .l{font-family:var(--display-alt);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.7rem;color:rgba(252,246,239,.7);margin-top:.7rem}
+
+  /* VISION / MISSION */
+  .vm-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px)}
+  .vm-card{border:1px solid var(--hair-light);padding:clamp(30px,4vw,52px);border-radius:4px;position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(252,246,239,.03),transparent)}
+  .vm-card .tag{font-family:var(--display);font-size:clamp(3rem,7vw,5rem);color:rgba(158,36,23,.35);line-height:.8;position:absolute;top:18px;right:24px}
+  .vm-card h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.8rem;letter-spacing:-.01em;color:var(--offwhite);margin-bottom:1rem;position:relative}
+  .vm-card p{font-size:1.22rem;color:rgba(252,246,239,.82)}
+
+  /* MANDATE goals */
+  .goals{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:2.5rem}
+  .goal{padding:32px 28px;border:1px solid var(--hair);border-radius:4px;background:var(--offwhite);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+  .goal:hover{transform:translateY(-6px);box-shadow:0 24px 50px -28px rgba(139,26,16,.4);border-color:var(--red)}
+  .goal .num{font-family:var(--display);font-size:1.6rem;color:var(--red);line-height:1}
+  .goal h4{font-family:var(--display-alt);font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:1.02rem;margin:.8rem 0 .5rem}
+  .goal p{font-size:1.08rem;color:rgba(17,17,17,.72)}
+
+  /* SERVICES */
+  .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:2.5rem}
+  .svc{
+    position:relative;padding:clamp(30px,3.5vw,46px);border-radius:4px;overflow:hidden;
+    background:var(--offwhite);border:1px solid var(--hair);transition:transform .35s ease,box-shadow .35s ease;
+  }
+  .svc.feature{grid-column:span 2;background:linear-gradient(135deg,var(--red),var(--red-bright));color:var(--offwhite);border-color:transparent}
+  .svc:hover{transform:translateY(-6px);box-shadow:0 30px 60px -34px rgba(139,26,16,.45)}
+  .svc .ico{width:54px;height:54px;margin-bottom:1.2rem;color:var(--red)}
+  .svc.feature .ico{color:var(--cream)}
+  .svc h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.55rem;letter-spacing:-.01em;margin-bottom:.4rem}
+  .svc .kicker{font-family:var(--display-alt);font-weight:800;text-transform:uppercase;letter-spacing:.16em;font-size:.66rem;color:var(--red);margin-bottom:.9rem}
+  .svc.feature .kicker{color:var(--cream)}
+  .svc p{font-size:1.1rem;color:rgba(17,17,17,.74)}
+  .svc.feature p{color:rgba(252,246,239,.9);max-width:62ch}
+
+  /* SEGMENTS table */
+  .seg-list{margin-top:2.5rem;border-top:1px solid var(--hair-light)}
+  .seg{display:grid;grid-template-columns:64px 1fr 1.3fr;gap:24px;align-items:start;padding:30px 0;border-bottom:1px solid var(--hair-light)}
+  .seg .sn{font-family:var(--display);font-size:2.2rem;color:var(--red-bright);line-height:.9}
+  .seg h4{font-family:var(--display-alt);font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:1.05rem;color:var(--offwhite)}
+  .seg p{font-size:1.1rem;color:rgba(252,246,239,.72)}
+
+  /* POLICY / SDG */
+  .sdg-row{display:flex;gap:18px;flex-wrap:wrap;margin-top:2rem}
+  .sdg{display:flex;gap:16px;align-items:center;padding:18px 24px;border-radius:4px;background:var(--offwhite);border:1px solid var(--hair);flex:1 1 280px}
+  .sdg .badge{width:54px;height:54px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:1.5rem;color:#fff;flex:none}
+  .sdg.g4 .badge{background:#C5192D}
+  .sdg.g17 .badge{background:#19486A}
+  .sdg h4{font-family:var(--display-alt);font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-size:.82rem;line-height:1.3}
+  .sdg p{font-size:1.02rem;color:rgba(17,17,17,.7)}
+
+  /* CSR */
+  .csr-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:2.5rem}
+  .csr{padding:clamp(28px,3.5vw,44px);border-radius:4px;background:var(--offwhite);border:1px solid var(--hair);border-top:4px solid var(--red)}
+  .csr .ico{width:46px;height:46px;color:var(--red);margin-bottom:1rem}
+  .csr h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.5rem;margin-bottom:.5rem}
+  .csr p{font-size:1.1rem;color:rgba(17,17,17,.74)}
+
+  /* VALUE PROP pillars */
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:2.5rem}
+  .pillar{padding:clamp(30px,3.5vw,44px);border:1px solid var(--hair-light);border-radius:4px;background:linear-gradient(180deg,rgba(252,246,239,.04),transparent);transition:transform .3s ease,border-color .3s ease}
+  .pillar:hover{transform:translateY(-6px);border-color:var(--red-bright)}
+  .pillar .n{font-family:var(--display);font-size:1.4rem;color:var(--red-bright)}
+  .pillar h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.5rem;margin:.6rem 0 .6rem;color:var(--offwhite)}
+  .pillar p{font-size:1.1rem;color:rgba(252,246,239,.78)}
+
+  /* REVENUE */
+  .rev-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px);align-items:center}
+  .rev-streams{display:flex;flex-direction:column;gap:14px;margin-top:1.5rem}
+  .rev-streams .row{display:flex;align-items:center;gap:16px}
+  .rev-streams .bar{height:14px;border-radius:8px;background:linear-gradient(90deg,var(--red),var(--red-bright));box-shadow:0 4px 14px -6px var(--red-glow)}
+  .rev-streams .lab{font-family:var(--display-alt);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.74rem;white-space:nowrap}
+
+  /* GROWTH */
+  .grow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:2.5rem}
+  .grow{padding:clamp(30px,3.5vw,44px);border-radius:4px;background:var(--offwhite);border:1px solid var(--hair);position:relative;overflow:hidden;transition:transform .35s ease,box-shadow .35s ease}
+  .grow:hover{transform:translateY(-6px);box-shadow:0 30px 60px -34px rgba(139,26,16,.45)}
+  .grow .ico{width:50px;height:50px;color:var(--red);margin-bottom:1.1rem}
+  .grow h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.45rem;margin-bottom:.5rem}
+  .grow p{font-size:1.08rem;color:rgba(17,17,17,.74)}
+  .grow-close{margin-top:2.6rem;font-size:clamp(1.3rem,2.6vw,1.8rem);font-style:italic;text-align:center;max-width:50ch;margin-left:auto;margin-right:auto;color:var(--ink)}
+
+  /* CONTACT */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px)}
+  .field{margin-bottom:20px}
+  .field label{display:block;font-family:var(--display-alt);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.7rem;color:var(--cream);margin-bottom:.5rem}
+  .field input,.field textarea{
+    width:100%;padding:14px 16px;border:1px solid var(--hair-light);background:rgba(252,246,239,.04);
+    color:var(--offwhite);font-family:var(--serif);font-size:1.1rem;border-radius:3px;transition:border-color .25s ease,background .25s ease;
+  }
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--red-bright);background:rgba(252,246,239,.07)}
+  .field textarea{resize:vertical;min-height:120px}
+  .field .err{color:#ff9a7a;font-size:.85rem;font-style:italic;margin-top:.35rem;display:none}
+  .field.invalid .err{display:block}
+  .field.invalid input,.field.invalid textarea{border-color:#ff9a7a}
+  .form-note{font-size:1rem;color:rgba(252,246,239,.6);font-style:italic;margin-top:.5rem}
+  .form-success{display:none;padding:18px 20px;border:1px solid var(--red-bright);border-radius:4px;background:rgba(158,36,23,.18);color:var(--cream);margin-top:18px;font-style:italic}
+  .form-success.show{display:block}
+
+  .cinfo{display:flex;flex-direction:column;gap:22px}
+  .cinfo .item{display:flex;gap:16px;align-items:flex-start}
+  .cinfo .ico{width:38px;height:38px;color:var(--red-bright);flex:none}
+  .cinfo .item .k{font-family:var(--display-alt);font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.68rem;color:rgba(252,246,239,.6)}
+  .cinfo .item .v{font-size:1.18rem;color:var(--offwhite)}
+  .cinfo .item a:hover{color:var(--red-bright)}
+
+  /* FOOTER */
+  footer{background:#0c0c0c;color:rgba(252,246,239,.7);padding:60px 0 30px}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--hair-light)}
+  .foot-brand .wordmark{color:var(--offwhite)}
+  .foot-brand p{margin-top:1rem;font-style:italic;max-width:34ch;color:rgba(252,246,239,.6)}
+  .foot-col h5{font-family:var(--display-alt);font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.7rem;color:var(--red-bright);margin-bottom:1rem}
+  .foot-col a{display:block;padding:5px 0;font-size:1rem;color:rgba(252,246,239,.7)}
+  .foot-col a:hover{color:var(--offwhite)}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;padding-top:24px;font-size:.85rem;font-family:var(--display-alt);letter-spacing:.04em}
+  .foot-bottom .soc{display:flex;gap:14px}
+  .foot-bottom .soc a{width:34px;height:34px;border:1px solid var(--hair-light);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.25s}
+  .foot-bottom .soc a:hover{background:var(--red);border-color:var(--red);color:#fff}
+  .foot-bottom .soc svg{width:16px;height:16px}
+
+  /* WHATSAPP FLOAT */
+  .wa-float{
+    position:fixed;right:22px;bottom:22px;z-index:1500;width:60px;height:60px;border-radius:50%;
+    background:#25D366;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 12px 30px -8px rgba(37,211,102,.55);transition:transform .3s ease;
+  }
+  .wa-float:hover{transform:scale(1.08)}
+  .wa-float svg{width:32px;height:32px;color:#fff}
+  .wa-float::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:pulse 2.4s ease-out infinite}
+  @keyframes pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.7);opacity:0}}
+
+  /* SCROLL REVEAL */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal[data-d="1"]{transition-delay:.08s}
+  .reveal[data-d="2"]{transition-delay:.16s}
+  .reveal[data-d="3"]{transition-delay:.24s}
+  .reveal[data-d="4"]{transition-delay:.32s}
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+    html{scroll-behavior:auto}
+  }
+
+  /* RESPONSIVE */
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns:1fr}
+    .tower-art{display:none}
+    .about-grid,.vm-grid,.csr-grid,.contact-grid,.rev-grid{grid-template-columns:1fr}
+    .goals,.pillars,.grow-grid{grid-template-columns:1fr}
+    .svc-grid{grid-template-columns:1fr}
+    .svc.feature{grid-column:auto}
+    .stats{grid-template-columns:1fr 1fr}
+    .seg{grid-template-columns:48px 1fr;gap:16px}
+    .seg p{grid-column:1 / -1;margin-top:-10px}
+    .foot-top{grid-template-columns:1fr}
+  }
+  @media (max-width:760px){
+    nav.links{
+      position:fixed;inset:0 0 0 auto;width:min(82vw,340px);background:var(--ink);color:var(--offwhite);
+      flex-direction:column;align-items:flex-start;justify-content:center;gap:26px;padding:40px;
+      transform:translateX(100%);transition:transform .4s cubic-bezier(.16,1,.3,1);z-index:1100;
+    }
+    body.menu-open nav.links{transform:none}
+    nav.links a{color:var(--offwhite);font-size:1rem}
+    nav.links .btn{color:var(--offwhite)}
+    .menu-toggle{display:block;z-index:1200}
+    header.scrolled .menu-toggle span{background:var(--ink)}
+    body.menu-open .menu-toggle span{background:var(--offwhite)}
+  }
+  @media (max-width:480px){
+    .stats{grid-template-columns:1fr}
+    body{font-size:1.1rem}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="top">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="Spearnet Towers home">
+      <!-- LOGO: tower + concentric red signal waves -->
+      <svg viewBox="0 0 64 64" role="img" aria-label="Spearnet Towers logo">
+        <g fill="none" stroke="#9E2417" stroke-width="2.4" stroke-linecap="round">
+          <path d="M14 20a26 26 0 0 1 36 0"/>
+          <path d="M20 26a17 17 0 0 1 24 0"/>
+          <path d="M26 32a8 8 0 0 1 12 0"/>
+        </g>
+        <g fill="currentColor">
+          <circle cx="32" cy="20" r="3.4"/>
+          <path d="M32 22 L24 56 H28 L30 44 H34 L36 56 H40 Z"/>
+          <rect x="29.4" y="30" width="5.2" height="2.1" rx="1"/>
+          <rect x="28.4" y="37" width="7.2" height="2.1" rx="1"/>
+        </g>
+      </svg>
+      <span class="wordmark">SPEARNET<span>TOWERS</span></span>
+    </a>
+
+    <nav class="links" id="nav" aria-label="Primary">
+      <a href="#top">Home</a>
+      <a href="#about">About</a>
+      <a href="#vision">Vision &amp; Mission</a>
+      <a href="#services">Services</a>
+      <a href="#impact">Impact</a>
+      <a href="#growth">Growth</a>
+      <a href="#contact" class="btn">Get in Touch</a>
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-label="Introduction">
+  <div class="stars" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow hero-eyebrow">Telecommunications Infrastructure · South Africa</span>
+      <h1>Spearnet<br>Towers</h1>
+      <span class="tagline">The Future Has Signal</span>
+      <p class="support">Connecting South Africa, one tower at a time — building the backbone of digital connectivity in the communities that need it most.</p>
+      <div class="hero-cta">
+        <a href="#services" class="btn">Explore Our Services</a>
+        <a href="#contact" class="btn ghost-light">Partner With Us</a>
+      </div>
+    </div>
+    <div class="tower-art" aria-hidden="true">
+      <!-- Hero tower silhouette with signal -->
+      <svg viewBox="0 0 200 420" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#F7E8DD" stroke-opacity="0.85" stroke-width="2">
+          <path d="M70 70a55 55 0 0 1 60 0"/>
+          <path d="M80 84a38 38 0 0 1 40 0"/>
+          <path d="M90 98a20 20 0 0 1 20 0"/>
+        </g>
+        <circle cx="100" cy="66" r="5" fill="#9E2417"/>
+        <g stroke="#F7E8DD" stroke-width="3" stroke-linecap="round" fill="none">
+          <line x1="100" y1="70" x2="100" y2="120"/>
+          <!-- mast lattice -->
+          <line x1="80" y1="410" x2="100" y2="120"/>
+          <line x1="120" y1="410" x2="100" y2="120"/>
+          <line x1="86" y1="150" x2="114" y2="150"/>
+          <line x1="84" y1="185" x2="116" y2="185"/>
+          <line x1="82" y1="225" x2="118" y2="225"/>
+          <line x1="80" y1="270" x2="120" y2="270"/>
+          <line x1="78" y1="320" x2="122" y2="320"/>
+          <line x1="76" y1="370" x2="124" y2="370"/>
+          <path d="M86 150 L114 185 M114 150 L86 185 M84 185 L116 225 M116 185 L84 225 M82 225 L118 270 M118 225 L82 270 M80 270 L120 320 M120 270 L80 320 M78 320 L122 370 M122 320 L78 370"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="section-pad">
+  <div class="wrap about-grid">
+    <div class="about-copy reveal">
+      <span class="eyebrow">Company Overview</span>
+      <h2 class="h-section">Building the<br>Backbone</h2>
+      <p>Spearnet Towers (Pty) Ltd is a pioneering South African telecommunications infrastructure company dedicated to developing, deploying and managing innovative, efficient cellphone tower solutions.</p>
+      <p>We exist to enhance mobile network coverage — particularly across underserved and remote regions — in pursuit of a digitally empowered South Africa. We believe robust digital connectivity is essential infrastructure: the foundation for economic growth, social inclusion and stronger public services.</p>
+    </div>
+    <div class="figure reveal" data-d="1" role="img" aria-label="A telecommunications tower silhouetted against a dusk savanna sky">
+      <div class="sky" aria-hidden="true"></div>
+      <svg viewBox="0 0 200 380" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g fill="none" stroke="#F7E8DD" stroke-opacity=".9" stroke-width="2.4">
+          <path d="M68 60a58 58 0 0 1 64 0"/>
+          <path d="M80 76a40 40 0 0 1 40 0"/>
+        </g>
+        <circle cx="100" cy="56" r="5" fill="#FCF6EF"/>
+        <g stroke="#FCF6EF" stroke-width="3" stroke-linecap="round" fill="none" stroke-opacity=".95">
+          <line x1="82" y1="372" x2="100" y2="100"/>
+          <line x1="118" y1="372" x2="100" y2="100"/>
+          <line x1="88" y1="140" x2="112" y2="140"/>
+          <line x1="86" y1="185" x2="114" y2="185"/>
+          <line x1="84" y1="235" x2="116" y2="235"/>
+          <line x1="83" y1="295" x2="117" y2="295"/>
+          <path d="M88 140 L112 185 M112 140 L88 185 M86 185 L114 235 M114 185 L86 235 M84 235 L116 295 M116 235 L84 295"/>
+        </g>
+      </svg>
+      <div class="cap">Connectivity, where it has never reached</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="on-dark" aria-label="Key figures">
+  <div class="stats">
+    <div class="stat reveal"><div class="n">11</div><div class="l">Land-use consents secured</div></div>
+    <div class="stat reveal" data-d="1"><div class="n">Rural KZN</div><div class="l">Communities targeted</div></div>
+    <div class="stat reveal" data-d="2"><div class="n">9yr 11m</div><div class="l">Medium-term site leases</div></div>
+    <div class="stat reveal" data-d="3"><div class="n">100%</div><div class="l">Aligned to the NDP</div></div>
+  </div>
+</section>
+
+<!-- ============ VISION & MISSION ============ -->
+<section id="vision" class="section-pad on-dark">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Our Compass</span>
+      <h2 class="h-section">Vision &amp; Mission</h2>
+    </div>
+    <div class="vm-grid">
+      <div class="vm-card reveal">
+        <span class="tag">01</span>
+        <h3>Vision</h3>
+        <p>To be South Africa's leading provider of telecommunications infrastructure — championing digital equity and empowering communities through enhanced connectivity.</p>
+      </div>
+      <div class="vm-card reveal" data-d="1">
+        <span class="tag">02</span>
+        <h3>Mission</h3>
+        <p>To bridge the digital divide by delivering reliable, high-quality mobile connectivity across South Africa — focusing on underserved regions, promoting sustainable practices, and contributing to the nation's development goals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MANDATE & GOALS ============ -->
+<section class="section-pad">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Why We Exist</span>
+      <h2 class="h-section">Mandate &amp;<br>Strategic Goals</h2>
+      <p class="lead">A clear remit: connect the country, grow the economy, and do it sustainably.</p>
+    </div>
+    <div class="goals">
+      <div class="goal reveal"><div class="num">01</div><h4>Expand Connectivity</h4><p>Extend reliable mobile coverage across urban, rural and peri-urban areas — reaching the communities the market has overlooked.</p></div>
+      <div class="goal reveal" data-d="1"><div class="num">02</div><h4>Drive Economic Growth</h4><p>Treat connectivity as economic infrastructure — unlocking opportunity, enterprise and access wherever a tower rises.</p></div>
+      <div class="goal reveal" data-d="2"><div class="num">03</div><h4>Build Sustainably</h4><p>Operate a sustainable business model that prioritises innovation, responsible practice and community empowerment.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="section-pad on-dark">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Our Offering</span>
+      <h2 class="h-section">What We Do</h2>
+      <p class="lead">Infrastructure that operators, government and communities can build on — literally.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc feature reveal">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2v9M7.5 6.5a6 6 0 0 1 9 0M9.5 9a3 3 0 0 1 5 0M9 22l3-11 3 11M9.5 18h5"/></svg>
+        <span class="kicker">Primary Revenue Stream</span>
+        <h3>Tower Leasing</h3>
+        <p>Multi-tenant leasing engineered to maximise profitability and efficiency. Pricing is structured around tower specifications, location and tenant volume — so a single structure can serve multiple operators at once.</p>
+      </div>
+      <div class="svc reveal">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
+        <h3>Built-to-Suit</h3>
+        <p>Custom tower construction plus long-term leasing for operators expanding into underserved markets — reducing their capital expenditure and accelerating deployment.</p>
+      </div>
+      <div class="svc reveal" data-d="1">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 21h18M4 21V10h16v11M9 21v-5h6v5M12 3l8 4H4z"/></svg>
+        <h3>Government &amp; Private Contracts</h3>
+        <p>Public-private partnerships, grants and service-level agreements that deliver connectivity to schools, clinics and government offices.</p>
+      </div>
+      <div class="svc reveal" data-d="2" style="grid-column:span 2">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
+        <h3>Infrastructure Sharing &amp; Co-location</h3>
+        <p>Hosting third-party equipment on Spearnet towers — for government bodies, smart-city initiatives and private networks. One structure, many tenants, maximum efficiency.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POLICY-DRIVEN MODEL / SEGMENTS ============ -->
+<section class="section-pad on-red">
+  <div class="wrap on-dark" style="background:transparent">
+    <div class="reveal">
+      <span class="eyebrow">Who We Serve</span>
+      <h2 class="h-section">A Policy-Driven<br>Model</h2>
+    </div>
+    <div class="seg-list">
+      <div class="seg reveal">
+        <div class="sn">01</div>
+        <h4>Telecommunications Network Providers</h4>
+        <p>Reliable infrastructure in high-demand and underserved areas — enabling continuous, high-quality service.</p>
+      </div>
+      <div class="seg reveal" data-d="1">
+        <div class="sn">02</div>
+        <h4>Local Municipalities &amp; Traditional Authorities</h4>
+        <p>Improved service delivery and community upliftment through better connectivity.</p>
+      </div>
+      <div class="seg reveal" data-d="2">
+        <div class="sn">03</div>
+        <h4>Government Departments &amp; Agencies</h4>
+        <p>Advancing digital transformation and public-service efficiency through strategic collaboration.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POLICY ALIGNMENT / SDG ============ -->
+<section id="impact" class="section-pad">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Aligned by Design</span>
+      <h2 class="h-section">Policy Alignment &amp;<br>Development Goals</h2>
+      <p class="lead">Spearnet Towers is fully aligned with South Africa's National Development Plan and broader global objectives — including the United Nations Sustainable Development Goals.</p>
+    </div>
+    <div class="sdg-row">
+      <div class="sdg g4 reveal">
+        <div class="badge">4</div>
+        <div><h4>Goal 4 · Quality Education</h4><p>Enhanced connectivity to learning institutions, opening access to digital education.</p></div>
+      </div>
+      <div class="sdg g17 reveal" data-d="1">
+        <div class="badge">17</div>
+        <div><h4>Goal 17 · Partnerships for the Goals</h4><p>Strong multi-stakeholder cooperation across operators, government and communities.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CSR ============ -->
+<section class="section-pad on-dark">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Beyond the Tower</span>
+      <h2 class="h-section">Corporate Social<br>Responsibility</h2>
+      <p class="lead">We are committed to positive societal impact — building a thriving, inclusive and resilient future for all our stakeholders.</p>
+    </div>
+    <div class="csr-grid">
+      <div class="csr reveal">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3 2 8l10 5 10-5-10-5zM6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5M22 8v6"/></svg>
+        <h3>Education &amp; Digital Literacy</h3>
+        <p>Empowering schools and communities with the digital skills and resources to take part in the connected economy.</p>
+      </div>
+      <div class="csr reveal" data-d="1">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 20c0-2 .8-3.8 2.1-5 .9.2 3.9 1.2 3.9 5"/></svg>
+        <h3>Community Development</h3>
+        <p>Supporting local entrepreneurs and fostering tech-enabled small businesses, so connectivity translates into livelihoods.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VALUE PROPOSITION ============ -->
+<section class="section-pad on-red">
+  <div class="wrap on-dark" style="background:transparent">
+    <div class="reveal">
+      <span class="eyebrow">Why Spearnet</span>
+      <h2 class="h-section">Value Proposition</h2>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal"><div class="n">01</div><h3>Strategic Investment in Innovation</h3><p>We invest ahead of the curve — in technology and in the regions poised for growth.</p></div>
+      <div class="pillar reveal" data-d="1"><div class="n">02</div><h3>Cost-Efficient Operations</h3><p>Multi-tenant, shared infrastructure keeps deployment lean and returns strong.</p></div>
+      <div class="pillar reveal" data-d="2"><div class="n">03</div><h3>Reliable, Future-Ready Infrastructure</h3><p>Built to carry today's networks and tomorrow's — from 4G to 5G and beyond.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVENUE MODEL ============ -->
+<section class="section-pad">
+  <div class="wrap rev-grid">
+    <div class="reveal">
+      <span class="eyebrow">Built to Last</span>
+      <h2 class="h-section">Revenue &amp;<br>Stewardship</h2>
+      <p>Spearnet Towers operates a sustainable, multi-stream revenue model — leasing, built-to-suit, government and private contracts, and co-location — underpinned by responsible financial stewardship. Diversified income and disciplined operations make the business resilient and investor-credible.</p>
+    </div>
+    <div class="reveal" data-d="1">
+      <div class="rev-streams" aria-hidden="true">
+        <div class="row"><span class="bar" style="width:78%"></span><span class="lab">Tower Leasing</span></div>
+        <div class="row"><span class="bar" style="width:60%"></span><span class="lab">Built-to-Suit</span></div>
+        <div class="row"><span class="bar" style="width:48%"></span><span class="lab">Gov &amp; Private Contracts</span></div>
+        <div class="row"><span class="bar" style="width:38%"></span><span class="lab">Co-location</span></div>
+      </div>
+      <p class="form-note" style="color:rgba(17,17,17,.55)">Indicative weighting of revenue streams.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GROWTH ============ -->
+<section id="growth" class="section-pad on-dark">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">The Road Ahead</span>
+      <h2 class="h-section">Future Growth<br>Strategy</h2>
+    </div>
+    <div class="grow-grid">
+      <div class="grow reveal">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.5 8 12 8 12s8-6.5 8-12a8 8 0 0 0-8-8z"/></svg>
+        <h3>Regional Expansion</h3>
+        <p>Exploring new markets within South Africa and across the African continent.</p>
+      </div>
+      <div class="grow reveal" data-d="1">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8M21 7v6M21 7h-6"/></svg>
+        <h3>Technological Advancement</h3>
+        <p>Investing in next-generation technologies such as 5G and IoT solutions.</p>
+      </div>
+      <div class="grow reveal" data-d="2">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a6.5 6.5 0 0 1 13 0M12 11v4M10 13h4"/></svg>
+        <h3>Workforce Development</h3>
+        <p>Building a skilled, future-ready team through continuous learning and professional growth.</p>
+      </div>
+    </div>
+    <p class="grow-close reveal">Through these strategies, Spearnet aims to revolutionise South Africa's digital ecosystem — and create an inclusive, connected future for all.</p>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="section-pad on-red">
+  <div class="wrap on-dark" style="background:transparent">
+    <div class="reveal" style="margin-bottom:2.5rem">
+      <span class="eyebrow">Let's Build</span>
+      <h2 class="h-section">Get in Touch</h2>
+      <p class="lead">Whether you're an operator, a partner or a community — we'd like to hear from you.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input type="text" id="f-name" name="name" autocomplete="name" required />
+          <span class="err">Please enter your name.</span>
+        </div>
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input type="email" id="f-email" name="email" autocomplete="email" required />
+          <span class="err">Please enter a valid email address.</span>
+        </div>
+        <div class="field">
+          <label for="f-company">Company</label>
+          <input type="text" id="f-company" name="company" autocomplete="organization" />
+          <span class="err">Please enter your company.</span>
+        </div>
+        <div class="field">
+          <label for="f-message">Message</label>
+          <textarea id="f-message" name="message" required></textarea>
+          <span class="err">Please enter a message.</span>
+        </div>
+        <button type="button" class="btn" id="submitBtn">Send Message</button>
+        <p class="form-note">We typically respond within one business day.</p>
+        <div class="form-success" id="formSuccess" role="status">Thank you — your message is ready to send. We'll be in touch shortly.</div>
+      </div>
+
+      <div class="cinfo reveal" data-d="1">
+        <div class="item">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5c0 9 6 15 15 15l2.5-3.5-4-2-2 2c-3-1.5-5.5-4-7-7l2-2-2-4L4 5z"/></svg>
+          <div><div class="k">Phone / WhatsApp</div><div class="v"><a href="tel:+27834770979">083 477 0979</a></div></div>
+        </div>
+        <div class="item">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <div><div class="k">General Email</div><div class="v"><a href="mailto:spearnettowers@gmail.com">spearnettowers@gmail.com</a></div></div>
+        </div>
+        <div class="item">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <div><div class="k">Enquiries</div><div class="v"><a href="mailto:info@spearnettowers.com">info@spearnettowers.com</a></div></div>
+        </div>
+        <div class="item">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg>
+          <div><div class="k">Website</div><div class="v"><a href="https://www.spearnettowers.com">www.spearnettowers.com</a></div></div>
+        </div>
+        <div class="item">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <div><div class="k">Address</div><div class="v">Fairview Gardens, Umhlali</div></div>
+        </div>
+        <a href="https://wa.me/27834770979" class="btn" style="background:#25D366;border-color:#25D366;margin-top:6px" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm5.5 14.2c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.5c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8.9.8 1.7 1.1 2 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.1.1.5-.1 1z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand">
+          <svg viewBox="0 0 64 64" width="36" height="36" aria-hidden="true">
+            <g fill="none" stroke="#9E2417" stroke-width="2.4" stroke-linecap="round">
+              <path d="M14 20a26 26 0 0 1 36 0"/><path d="M20 26a17 17 0 0 1 24 0"/><path d="M26 32a8 8 0 0 1 12 0"/>
+            </g>
+            <g fill="#FCF6EF"><circle cx="32" cy="20" r="3.4"/><path d="M32 22 L24 56 H28 L30 44 H34 L36 56 H40 Z"/></g>
+          </svg>
+          <span class="wordmark">SPEARNET<span>TOWERS</span></span>
+        </div>
+        <p>The Future Has Signal. Connecting South Africa, one tower at a time.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Explore</h5>
+        <a href="#about">About</a>
+        <a href="#vision">Vision &amp; Mission</a>
+        <a href="#services">Services</a>
+        <a href="#impact">Impact</a>
+        <a href="#growth">Growth</a>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <a href="tel:+27834770979">083 477 0979</a>
+        <a href="mailto:info@spearnettowers.com">info@spearnettowers.com</a>
+        <a href="https://wa.me/27834770979" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.spearnettowers.com">www.spearnettowers.com</a>
+        <span style="display:block;padding:5px 0;font-size:1rem;color:rgba(252,246,239,.7)">Fairview Gardens, Umhlali</span>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Spearnet Towers (Pty) Ltd. All rights reserved.</span>
+      <div class="soc">
+        <a href="https://wa.me/27834770979" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2z"/></svg></a>
+        <a href="mailto:info@spearnettowers.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+        <a href="tel:+27834770979" aria-label="Phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5c0 9 6 15 15 15l2.5-3.5-4-2-2 2c-3-1.5-5.5-4-7-7l2-2-2-4L4 5z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp floating button -->
+<a href="https://wa.me/27834770979" class="wa-float" target="_blank" rel="noopener" aria-label="Chat with Spearnet Towers on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm5.5 14.2c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.1.1.3 0 .5l-.4.5c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8.9.8 1.7 1.1 2 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.1.1.5-.1 1z"/></svg>
+</a>
+
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Sticky header shadow
+  const header = document.getElementById('top');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 24);
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  // Mobile menu
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('nav');
+  toggle.addEventListener('click', () => {
+    const open = document.body.classList.toggle('menu-open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    document.body.classList.remove('menu-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Form validation (front-end only)
+  const fields = {
+    'f-name':   v => v.trim().length > 0,
+    'f-email':  v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),
+    'f-message':v => v.trim().length > 0
+  };
+  const submitBtn = document.getElementById('submitBtn');
+  const success = document.getElementById('formSuccess');
+
+  submitBtn.addEventListener('click', () => {
+    let valid = true;
+    for (const [id, test] of Object.entries(fields)) {
+      const input = document.getElementById(id);
+      const field = input.closest('.field');
+      if (!test(input.value)) { field.classList.add('invalid'); valid = false; }
+      else { field.classList.remove('invalid'); }
+    }
+    if (valid) {
+      success.classList.add('show');
+      // Build a mailto handoff so the message can actually be sent without a backend
+      const name = document.getElementById('f-name').value.trim();
+      const email = document.getElementById('f-email').value.trim();
+      const company = document.getElementById('f-company').value.trim();
+      const message = document.getElementById('f-message').value.trim();
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nCompany: ${company}\n\n${message}`);
+      const subject = encodeURIComponent(`Website enquiry from ${name}`);
+      setTimeout(() => { window.location.href = `mailto:info@spearnettowers.com?subject=${subject}&body=${body}`; }, 600);
+    }
+  });
+
+  // Clear error on input
+  document.querySelectorAll('.field input, .field textarea').forEach(el => {
+    el.addEventListener('input', () => el.closest('.field').classList.remove('invalid'));
+  });
+</script>
+</body>
+</html>
